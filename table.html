@@ -1,47 +1,307 @@
 <!DOCTYPE html>
-<html>
 
-<head>
-    <style>
-        table {
-            font-family: arial, sans-serif;
-            border-collapse: collapse;
-            width: 100%;
-        }
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+    <link href="css/bubble.css" rel="stylesheet" type="text/css">
+	<link href="css/calender.css" rel="stylesheet">
+<style>
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+ 
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+ 
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
 
-        td,
-        th {
-            border: 1px solid #dddddd;
-            text-align: left;
-            padding: 8px;
-        }
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+} 
+.sce
+	{
+		font-weight:900;
+		font-size:28px;
+		color: #bdb3b3;
+	}	
+.RECORD {
+		background-color: #fff;
+		color: #000;
+		font-weight: 700;
+		font-style: italic;
+		font-size: large;
+		border-width: 5px;
+		border-color: #fec723;
+		border-style: groove;
+		text-shadow: 1px 1px #ffd700;
+		padding-top: 10px;
+		padding-bottom: 10px;
+	 }
+.d
+	{
+		font-size: 40px;
+	}
+.circle
+	{
+		border: 5px solid red; 
+	   padding-right: 10px;
+	   padding-left: 10px;
+	}
+.circle2
+	{
+	   border: 5px solid green;
+	   padding-right: 10px;
+	   padding-left: 10px;
+	}
+.circle3
+	{
+	   border: 5px solid orange;
+	   padding-right: 10px;
+	   padding-left: 10px;
+	}
 
-        tr:nth-child(even) {
-            background-color: #dddddd;
-        }
-    </style>
-    <script src="table.js">
-    </script>
+.arrow
+	{
+		 position: absolute;
+		margin-left: -27px;
+		margin-top: 83px;
+		width: 18px;
+	}
+.arrow2
+	{
+		width: 20px;
+		position: absolute;
+		height: 184px;
+		margin-top: 1px;
+		transform: rotate(301deg);
+		margin-left: 79px;
+	}
+.arrowsm
+	{
+		width: 20px;
+		position: absolute;
+		height: 157px;
+		margin-top: -69px;
+		transform: rotate(270deg);
+		margin-left: 79px;
+	}
+.arrow2cp
+	{
+		width: 20px;
+		position: absolute;
+		height: 172px;
+		margin-top: 7px;
+		transform: rotate(302deg);
+		margin-left: 66px;
+	}
+.arrow3
+	{
+		width: 20px;
+		position: absolute;
+		height: 190px;
+		margin-top: -13px;
+		transform: rotate(417deg);
+		margin-left: -100px;
+	}
+.arrow4
+	{
+		width: 20px;
+		position: absolute;
+		height: 198px;
+		margin-top: 5px;
+		transform: rotate(237deg);
+		margin-left: -94px;
+	}
+.lgarrow
+	{
+		position: absolute;
+		margin-left: 5px;
+		margin-top: 47px;
+		width: 10% !important;
+		height: 30% !important;
+	}
+@media only screen and (max-width: 600px)
+	{ 
+		table
+		{
+			width: 100% !important; 
+		}
+	  
+	}
+@media screen and (min-width: 500px)
+	{
+	td 
+	   {
+		font-size: 23px;
+		padding: 5px 3px;
+	   }
+	}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function() {   
+                $("html, body").animate({ 
+                    scrollTop: $( 
+                      'html, body').get(0).scrollHeight 
+                }, 2000);  
+        });
+</script> 
+<script src="table.js"></script> 
 </head>
+<body id="fcontent">
+<i>
+<div align="center"></div> 
 
-<body>
+<div style="position: fixed;
+  display: block;  text-align: center; height: 87px; width: 100%;overflow: hidden;top: 0; background: #000000;z-index: 999;">
+	<div class="bubbles" style="border-radius: 50%;margin: 0 auto;width: 340px;position: relative;">
+		<div id="bubble0" class="bubble" style="border-radius:50%;left: 199px; top: 60px; width: 22.6667px; height: 22.6667px; animation-delay: 0s;"></div>
+		<div id="bubble1" class="bubble" style="left: 119px; top: 48px; width: 13.6667px; height: 13.6667px; animation-delay: 0.266667s;"></div>
+		<div id="bubble2" class="bubble" style="left: 279px; top: 85px; width: 13.3333px; height: 13.3333px; animation-delay: 0.533333s;"></div>
+		<div id="bubble3" class="bubble" style="left: 208px; top: 88px; width: 19.6667px; height: 19.6667px; animation-delay: 0.8s;"></div>
+		<div id="bubble4" class="bubble" style="left: 94px; top: 81px; width: 26.6667px; height: 26.6667px; animation-delay: 1.06667s;"></div>
+		<div id="bubble5" class="bubble" style="left: 250px; top: 37px; width: 23px; height: 23px; animation-delay: 1.33333s;"></div>
+		<div id="bubble6" class="bubble" style="left: 70px; top: 66px; width: 14.3333px; height: 14.3333px; animation-delay: 1.6s;"></div>
+		<div id="bubble7" class="bubble" style="left: 75px; top: 128px; width: 24.6667px; height: 24.6667px; animation-delay: 1.86667s;"></div>
+		<div id="bubble8" class="bubble" style="left: 115px; top: 86px; width: 18.3333px; height: 18.3333px; animation-delay: 2.13333s;"></div>
+		<div id="bubble9" class="bubble" style="left: 80px; top: 49px; width: 16px; height: 16px; animation-delay: 2.4s;"></div>
+		<div id="bubble10" class="bubble" style="left: 356px; top: 86px; width: 18px; height: 18px; animation-delay: 2.66667s;"></div>
+		<div id="bubble11" class="bubble" style="left: 291px; top: 32px; width: 14px; height: 14px; animation-delay: 2.93333s;"></div>
+		<div id="bubble12" class="bubble" style="left: 22px; top: 9px; width: 18.3333px; height: 18.3333px; animation-delay: 3.2s;"></div>
+		<div id="bubble13" class="bubble" style="left: 99px; top: 22px; width: 18px; height: 18px; animation-delay: 3.46667s;"></div>
+		<div id="bubble14" class="bubble" style="left: 257px; top: 1px; width: 13.3333px; height: 13.3333px; animation-delay: 3.73333s;"></div>
+		<div id="bubble15" class="bubble" style="left: 17px; top: 48px; width: 22.6667px; height: 22.6667px; animation-delay: 4s;"></div>
+		<div id="bubble16" class="bubble" style="left: 201px; top: 18px; width: 24.3333px; height: 24.3333px; animation-delay: 4.26667s;"></div>
+		<div id="bubble17" class="bubble" style="left: 273px; top: 60px; width: 21px; height: 21px; animation-delay: 4.53333s;"></div>
+		<div id="bubble18" class="bubble" style="left: 217px; top: 51px; width: 22.6667px; height: 22.6667px; animation-delay: 4.8s;"></div>
+		<div id="bubble19" class="bubble" style="left: 173px; top: 96px; width: 21.6667px; height: 21.6667px; animation-delay: 5.06667s;"></div>
+		<div id="bubble20" class="bubble" style="left: 163px; top: 63px; width: 26.3333px; height: 26.3333px; animation-delay: 5.33333s;"></div>
+		<div id="bubble21" class="bubble" style="left: 163px; top: 77px; width: 20.6667px; height: 20.6667px; animation-delay: 5.6s;"></div>
+		<div id="bubble22" class="bubble" style="left: 21px; top: 73px; width: 26.6667px; height: 26.6667px; animation-delay: 5.86667s;"></div>
+		<div id="bubble23" class="bubble" style="left: 287px; top: 4px; width: 25.6667px; height: 25.6667px; animation-delay: 6.13333s;"></div>
+		<div id="bubble24" class="bubble" style="left: 4px; top: 14px; width: 14.6667px; height: 14.6667px; animation-delay: 6.4s;"></div>
+		<div id="bubble25" class="bubble" style="left: 363px; top: 106px; width: 14.6667px; height: 14.6667px; animation-delay: 6.66667s;"></div>
+		<div id="bubble26" class="bubble" style="left: 156px; top: 96px; width: 14.3333px; height: 14.3333px; animation-delay: 6.93333s;"></div>
+		<div id="bubble27" class="bubble" style="left: 255px; top: 72px; width: 19.6667px; height: 19.6667px; animation-delay: 7.2s;"></div>
+		<div id="bubble28" class="bubble" style="left: 96px; top: 51px; width: 13.6667px; height: 13.6667px; animation-delay: 7.46667s;"></div>
+		<div id="bubble29" class="bubble" style="left: 185px; top: 39px; width: 24px; height: 24px; animation-delay: 7.73333s;"></div>
+		<div id="bubble30" class="bubble" style="left: 169px; top: 94px; width: 17.6667px; height: 17.6667px; animation-delay: 8s;"></div>
+	</div>
+<div class="HEADLINES" align="center" style="font-size:2em;text-shadow: 4px 1px 1px #f3704f, 1px 3px 5px #fbf6f6;
+									background: -webkit-radial-gradient(50% 140%,circle,rgba(15,119,208,.5),transparent)">Good Morning</div>
+<!------<div>
+	
+<marquee style="position: fixed;left: 11px;top: 17px;font-family: none;    font-size: 24px;">
+		<p>
+					सभी Agents को सूचित किया जाता है।  सोमवार 13/04/2020 से GOLDSTAR OPEN 06.30.00 पर आएगी...
+		</p>
+	</marquee>
+</div>----->
+<span style="position: fixed; left: 11px; top: 17px;font-family: none;font-size: 24px;">Open Time : <span></span>
+						<span>:</span>
+						<span></span>
+						<span>:</span>
+						<span></span></span>
+<span style="    position: fixed;
+    right: 0;
+    top: 17px;
+    right: 11px;font-family: none;    font-size: 24px;">Close Time :  <span></span>
+						<span>:</span>
+						<span></span>
+						<span>:</span>
+						<span></span></span>
+</div>
+</i><div style="text-align:center;"><i>
+<br>
+<br>
+<br> 
+<div class="date" align="center">  
 
-    <h2>Results</h2>
+<table cellspacing="0" class="record" style="width:100%">
+<thead>
+<tr>
+<td bordercolor="#6699CC" bordercolorlight="#FFFFFF" bordercolordark="#6699CC">
+<p align="center"><font size="4">DATE</font></p>
+</td>
+<td colspan="1" align="center" valign="middle" bordercolor="#6699CC" bordercolorlight="#6699CC" bordercolordark="#6699CC"><font size="4">SUN</font></td>
+<td colspan="1" align="center" colspan="3" bordercolor="#6699CC" bordercolorlight="#6699CC" bordercolordark="#6699CC"><font size="4">MON</font></td>
+<td  colspan="1" align="center" colspan="3" bordercolor="#6699CC" bordercolorlight="#6699CC" bordercolordark="#6699CC"><font size="4">TUE</font></td>
+<td colspan="1" align="center" colspan="3" bordercolor="#6699CC" bordercolorlight="#6699CC" bordercolordark="#6699CC"><font size="4">WED</font></td>
+<td colspan="1" align="center" colspan="3" bordercolor="#6699CC" bordercolorlight="#6699CC" bordercolordark="#6699CC"><font size="4">THU</font></td>
+<td colspan="1" align="center" colspan="3" bordercolor="#6699CC" bordercolorlight="#6699CC" bordercolordark="#6699CC"><font size="4">FRI</font></td>
+<td colspan="1" align="center" style="padding-right:7px;" colspan="3" bordercolor="#6699CC" bordercolorlight="#6699CC" bordercolordark="#6699CC"><font size="4">SAT</font></td>
+ 
+</tr>
+</thead>
+<tbody id="chart"></tbody></table>
+</div>
 
-    <table id="chart">
-        <tr>
-            <th>Date</th>
-            <th>Sunday</th>
-            <th>Monday</th>
-            <th>Tuesday</th>
-            <th>Wednesday</th>
-            <th>Thursday</th>
-            <th>Friday</th>
-            <th>Saturday</th>
-        </tr>
+</i> 
+<script>
+	// audio.play();
+</script>
+<br>
+<br>
+<br>
+<br>
+<br>
+   
+    <script>
+	/***Scheme1***/
+		function CloseSceme1()
+			{
+				 var Scheem1 = document.getElementById("Scheem1"); 
+				 Scheem1.style.display = "none"; 
+			}
+		function Scheem1() 
+			{
+			  var Scheem1 = document.getElementById("Scheem1");
+				  Scheem1.style.display = "block";
+			} 
+	/***Scheme2***/
+		function CloseSceme2()
+		{
+			var Scheem2 = document.getElementById("Scheem2");
+			Scheem2.style.display = "none";
+		}
+		function Scheem2()
+		{
+			var Scheem2 = document.getElementById("Scheem2");
+			Scheem2.style.display = "block";
+		}
+	/***Scheme3***/
+		function CloseSceme3()
+		{
+			var Scheem3 = document.getElementById("Scheem3");
+			Scheem3.style.display = "none";
+		}
+		function Scheem3()
+		{
+			var Scheem3 = document.getElementById("Scheem3");
+			Scheem3.style.display= "block";
+		}
+	</script>
 
-    </table>
-
-</body>
-
-</html>
+ 
+</div></body></html>

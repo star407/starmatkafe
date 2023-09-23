@@ -68,15 +68,15 @@ data => {
 
 const updatetr = (arr)=> {
 
-  document.getElementById('chart').innerHTML += `
-  <tr>
-  <th>${arr[0]}</th>
-  <th>${arr[1]}</th>
-  <th>${arr[2]}</th>
-  <th>${arr[3]}</th>
-  <th>${arr[4]}</th>
-  <th>${arr[5]}</th>
-  <th>${arr[6]}</th>
-  <th>${arr[7]}</th>
-</tr>`
+  document.getElementById('chart').innerHTML += `<tr><td><p>${arr[0]}</p></td>
+  <td class="jd"><span class="d">${arr[1]}</span></td>
+    <td class="jd"><span class="d" style="color:#ff0000">${arr[2]}</span></td>
+    <td class="jd"><span class="d">${arr[3]}</span></td>
+    <td class="jd"><span class="d">${arr[4]}</span></td>
+    <td class="jd"><span class="d" style="color:#ff0000">${arr[5]}</span></td>
+<td class="jd"><span class="d">${arr[6]}</span></td>
+<td class="jd"><span class="d">${arr[7]}</span></td>`
 }
+
+
+
