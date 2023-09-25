@@ -43,7 +43,7 @@ const getRecord =
         switch (str) {
           case 'starmorning':
             starmorning.push(...data)
-            s = `${starmorning[starmorning.length - 1]['patti1'][1]}${starmorning[starmorning.length - 1]['patti1'][2]}${starmorning[starmorning.length - 1]['patti1'][3]}-${starmorning[starmorning.length - 1]['patti1'][0]}${starmorning[starmorning.length - 1]['patti2'][0]}-${starmorning[starmorning.length - 1]['patti2'][1]}${starmorning[starmorning.length - 1]['patti2'][2]}${starmorning[starmorning.length - 1]['patti2'][3]}`
+            s = `${starmorning[starmorning.length - 1]['patti1'][1]||"x"}${starmorning[starmorning.length - 1]['patti1'][2]||"x"}${starmorning[starmorning.length - 1]['patti1'][3]||"x"}-${starmorning[starmorning.length - 1]['patti1'][0]||"x"}${starmorning[starmorning.length - 1]['patti2'][0]||"x"}-${starmorning[starmorning.length - 1]['patti2'][1]||"x"}${starmorning[starmorning.length - 1]['patti2'][2]||"x"}${starmorning[starmorning.length - 1]['patti2'][3]||"x"}`
             console.log(`sm${s}`);
             document.getElementById('starmorning').innerHTML = s
             document.getElementById('starmorning1').innerHTML = s
@@ -51,44 +51,44 @@ const getRecord =
           case 'chitpiti':
             chitpiti.push(...data)
             console.log("hii");
-            s = `${chitpiti[chitpiti.length - 1]['patti1'][1]}${chitpiti[chitpiti.length - 1]['patti1'][2]}${chitpiti[chitpiti.length - 1]['patti1'][3]}-${chitpiti[chitpiti.length - 1]['patti1'][0]}${chitpiti[chitpiti.length - 1]['patti2'][0]}-${chitpiti[chitpiti.length - 1]['patti2'][1]}${chitpiti[chitpiti.length - 1]['patti2'][2]}${chitpiti[chitpiti.length - 1]['patti2'][3]}`
+            s = `${chitpiti[chitpiti.length - 1]['patti1'][1]||"x"}${chitpiti[chitpiti.length - 1]['patti1'][2]||"x"}${chitpiti[chitpiti.length - 1]['patti1'][3]||"x"}-${chitpiti[chitpiti.length - 1]['patti1'][0]||"x"}${chitpiti[chitpiti.length - 1]['patti2'][0]||"x"}-${chitpiti[chitpiti.length - 1]['patti2'][1]||"x"}${chitpiti[chitpiti.length - 1]['patti2'][2]||"x"}${chitpiti[chitpiti.length - 1]['patti2'][3]||"x"}`
             console.log(`cp${s}`);
             document.getElementById('chitpiti').innerHTML = s
             document.getElementById('chitpiti1').innerHTML = s
             break;
           case 'golden':
             golden.push(...data)
-            s = `${golden[golden.length - 1]['patti1'][1]}${golden[golden.length - 1]['patti1'][2]}${golden[golden.length - 1]['patti1'][3]}-${golden[golden.length - 1]['patti1'][0]}${golden[golden.length - 1]['patti2'][0]}-${golden[golden.length - 1]['patti2'][1]}${golden[golden.length - 1]['patti2'][2]}${golden[golden.length - 1]['patti2'][3]}`
+            s = `${golden[golden.length - 1]['patti1'][1]||"x"}${golden[golden.length - 1]['patti1'][2]||"x"}${golden[golden.length - 1]['patti1'][3]||"x"}-${golden[golden.length - 1]['patti1'][0]||"x"}${golden[golden.length - 1]['patti2'][0]||"x"}-${golden[golden.length - 1]['patti2'][1]||"x"}${golden[golden.length - 1]['patti2'][2]||"x"}${golden[golden.length - 1]['patti2'][3]||"x"}`
             document.getElementById('golden').innerHTML = s
             document.getElementById('golden1').innerHTML = s
             break;
           case 'stargold':
             stargold.push(...data)
-            s = `${stargold[stargold.length - 1]['patti1'][1]}${stargold[stargold.length - 1]['patti1'][2]}${stargold[stargold.length - 1]['patti1'][3]}-${stargold[stargold.length - 1]['patti1'][0]}${stargold[stargold.length - 1]['patti2'][0]}-${stargold[stargold.length - 1]['patti2'][1]}${stargold[stargold.length - 1]['patti2'][2]}${stargold[stargold.length - 1]['patti2'][3]}`
+            s = `${stargold[stargold.length - 1]['patti1'][1]||"x"}${stargold[stargold.length - 1]['patti1'][2]||"x"}${stargold[stargold.length - 1]['patti1'][3]||"x"}-${stargold[stargold.length - 1]['patti1'][0]||"x"}${stargold[stargold.length - 1]['patti2'][0]||"x"}-${stargold[stargold.length - 1]['patti2'][1]||"x"}${stargold[stargold.length - 1]['patti2'][2]||"x"}${stargold[stargold.length - 1]['patti2'][3]||"x"}`
             document.getElementById('stargold').innerHTML = s
             document.getElementById('stargold1').innerHTML = s
             break;
           case 'kalyan':
             kalyan.push(...data)
-            s = `${kalyan[kalyan.length - 1]['patti1'][1]}${kalyan[kalyan.length - 1]['patti1'][2]}${kalyan[kalyan.length - 1]['patti1'][3]}-${kalyan[kalyan.length - 1]['patti1'][0]}${kalyan[kalyan.length - 1]['patti2'][0]}-${kalyan[kalyan.length - 1]['patti2'][1]}${kalyan[kalyan.length - 1]['patti2'][2]}${kalyan[kalyan.length - 1]['patti2'][3]}`
+            s = `${kalyan[kalyan.length - 1]['patti1'][1]||"x"}${kalyan[kalyan.length - 1]['patti1'][2]||"x"}${kalyan[kalyan.length - 1]['patti1'][3]||"x"}-${kalyan[kalyan.length - 1]['patti1'][0]||"x"}${kalyan[kalyan.length - 1]['patti2'][0]||"x"}-${kalyan[kalyan.length - 1]['patti2'][1]||"x"}${kalyan[kalyan.length - 1]['patti2'][2]||"x"}${kalyan[kalyan.length - 1]['patti2'][3]||"x"}`
             document.getElementById('kalyan').innerHTML = s
             document.getElementById('kalyan1').innerHTML = s
             break;
           case 'shubhlakshmi':
             shubhlakshmi.push(...data)
-            s = `${shubhlakshmi[shubhlakshmi.length - 1]['patti1'][1]}${shubhlakshmi[shubhlakshmi.length - 1]['patti1'][2]}${shubhlakshmi[shubhlakshmi.length - 1]['patti1'][3]}-${shubhlakshmi[shubhlakshmi.length - 1]['patti1'][0]}${shubhlakshmi[shubhlakshmi.length - 1]['patti2'][0]}-${shubhlakshmi[shubhlakshmi.length - 1]['patti2'][1]}${shubhlakshmi[shubhlakshmi.length - 1]['patti2'][2]}${shubhlakshmi[shubhlakshmi.length - 1]['patti2'][3]}`
+            s = `${shubhlakshmi[shubhlakshmi.length - 1]['patti1'][1]||"x"}${shubhlakshmi[shubhlakshmi.length - 1]['patti1'][2]||"x"}${shubhlakshmi[shubhlakshmi.length - 1]['patti1'][3]||"x"}-${shubhlakshmi[shubhlakshmi.length - 1]['patti1'][0]||"x"}${shubhlakshmi[shubhlakshmi.length - 1]['patti2'][0]||"x"}-${shubhlakshmi[shubhlakshmi.length - 1]['patti2'][1]||"x"}${shubhlakshmi[shubhlakshmi.length - 1]['patti2'][2]||"x"}${shubhlakshmi[shubhlakshmi.length - 1]['patti2'][3]||"x"}`
             document.getElementById('shubhlakshmi').innerHTML = s
             document.getElementById('shubhlakshmi1').innerHTML = s
             break;
           case 'starnight':
             starnight.push(...data)
-            s = `${starnight[starnight.length - 1]['patti1'][1]}${starnight[starnight.length - 1]['patti1'][2]}${starnight[starnight.length - 1]['patti1'][3]}-${starnight[starnight.length - 1]['patti1'][0]}${starnight[starnight.length - 1]['patti2'][0]}-${starnight[starnight.length - 1]['patti2'][1]}${starnight[starnight.length - 1]['patti2'][2]}${starnight[starnight.length - 1]['patti2'][3]}`
+            s = `${starnight[starnight.length - 1]['patti1'][1]||"x"}${starnight[starnight.length - 1]['patti1'][2]||"x"}${starnight[starnight.length - 1]['patti1'][3]||"x"}-${starnight[starnight.length - 1]['patti1'][0]||"x"}${starnight[starnight.length - 1]['patti2'][0]||"x"}-${starnight[starnight.length - 1]['patti2'][1]||"x"}${starnight[starnight.length - 1]['patti2'][2]||"x"}${starnight[starnight.length - 1]['patti2'][3]||"x"}`
             document.getElementById('starnight').innerHTML = s
             document.getElementById('starnight1').innerHTML = s
             break;
           case 'mainmatka':
             mainmatka.push(...data)
-            s = `${mainmatka[mainmatka.length - 1]['patti1'][1]}${mainmatka[mainmatka.length - 1]['patti1'][2]}${mainmatka[mainmatka.length - 1]['patti1'][3]}-${mainmatka[mainmatka.length - 1]['patti1'][0]}${mainmatka[mainmatka.length - 1]['patti2'][0]}-${mainmatka[mainmatka.length - 1]['patti2'][1]}${mainmatka[mainmatka.length - 1]['patti2'][2]}${mainmatka[mainmatka.length - 1]['patti2'][3]}`
+            s = `${mainmatka[mainmatka.length - 1]['patti1'][1]||"x"}${mainmatka[mainmatka.length - 1]['patti1'][2]||"x"}${mainmatka[mainmatka.length - 1]['patti1'][3]||"x"}-${mainmatka[mainmatka.length - 1]['patti1'][0]||"x"}${mainmatka[mainmatka.length - 1]['patti2'][0]||"x"}-${mainmatka[mainmatka.length - 1]['patti2'][1]||"x"}${mainmatka[mainmatka.length - 1]['patti2'][2]||"x"}${mainmatka[mainmatka.length - 1]['patti2'][3]||"x"}`
             document.getElementById('mainmatka').innerHTML = s
             document.getElementById('mainmatka1').innerHTML = s
             break;
