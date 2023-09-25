@@ -12,8 +12,18 @@ var shubhlakshmi = [];
 var starnight = [];
 var mainmatka = [];
 
+var starmorningln 
+var chitpitiln
+var goldenln
+var stargoldln
+var kalyanln
+var shubhlakshmiln
+var starnightln
+var mainmatkaln
+
 const getRecord =
     async (str) => {
+      console.log("here");
   await fetch('https://starmatkaagain.onrender.com/get', {
     method: 'POST',
     headers: {
@@ -22,116 +32,158 @@ const getRecord =
     body: JSON.stringify({'title': str})
   })
       .then(response => {
+        console.log("again");
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
         return response.json();
       })
       .then(data => {
+        let s
         switch (str) {
           case 'starmorning':
             starmorning.push(...data)
-            document.getElementById('starmorningtop').innerHTML =
-                `${starmorning[starmorning.length - 1]['numbertop']}`
-            document.getElementById('starmorningmiddle').innerHTML =
-                `-${starmorning[starmorning.length - 1]['numbermiddle']}-`
-            document.getElementById('starmorningbottom').innerHTML =
-                `${starmorning[starmorning.length - 1]['numberbottom']}`
-            document.getElementById('starmorning').innerHTML =
-                `${starmorning[starmorning.length - 1]['numbertop']}-${
-                    starmorning[starmorning.length - 1]['numbermiddle']}-${
-                    starmorning[starmorning.length - 1]['numberbottom']}`
+            s = `${starmorning[starmorning.length - 1]['patti1'][1]}${starmorning[starmorning.length - 1]['patti1'][2]}${starmorning[starmorning.length - 1]['patti1'][3]}-${starmorning[starmorning.length - 1]['patti1'][0]}${starmorning[starmorning.length - 1]['patti2'][0]}-${starmorning[starmorning.length - 1]['patti2'][1]}${starmorning[starmorning.length - 1]['patti2'][2]}${starmorning[starmorning.length - 1]['patti2'][3]}`
+            console.log(`sm${s}`);
+            document.getElementById('starmorning').innerHTML = s
+            document.getElementById('starmorning1').innerHTML = s
             break;
           case 'chitpiti':
             chitpiti.push(...data)
-            document.getElementById('chitpititop').innerHTML =
-            `${chitpiti[chitpiti.length - 1]['numbertop']}`
-        document.getElementById('chitpitimiddle').innerHTML =
-            `-${chitpiti[chitpiti.length - 1]['numbermiddle']}-`
-        document.getElementById('chitpitibottom').innerHTML =
-            `${chitpiti[chitpiti.length - 1]['numberbottom']}`
-        document.getElementById('chitpiti').innerHTML =
-            `${chitpiti[chitpiti.length - 1]['numbertop']}-${
-                chitpiti[chitpiti.length - 1]['numbermiddle']}-${
-                chitpiti[chitpiti.length - 1]['numberbottom']}`
+            console.log("hii");
+            s = `${chitpiti[chitpiti.length - 1]['patti1'][1]}${chitpiti[chitpiti.length - 1]['patti1'][2]}${chitpiti[chitpiti.length - 1]['patti1'][3]}-${chitpiti[chitpiti.length - 1]['patti1'][0]}${chitpiti[chitpiti.length - 1]['patti2'][0]}-${chitpiti[chitpiti.length - 1]['patti2'][1]}${chitpiti[chitpiti.length - 1]['patti2'][2]}${chitpiti[chitpiti.length - 1]['patti2'][3]}`
+            console.log(`cp${s}`);
+            document.getElementById('chitpiti').innerHTML = s
+            document.getElementById('chitpiti1').innerHTML = s
             break;
           case 'golden':
             golden.push(...data)
-            document.getElementById('goldentop').innerHTML =
-            `${golden[golden.length - 1]['numbertop']}`
-        document.getElementById('goldenmiddle').innerHTML =
-            `-${golden[golden.length - 1]['numbermiddle']}-`
-        document.getElementById('goldenbottom').innerHTML =
-            `${golden[golden.length - 1]['numberbottom']}`
-        document.getElementById('golden').innerHTML =
-            `${golden[golden.length - 1]['numbertop']}-${
-              golden[golden.length - 1]['numbermiddle']}-${
-                golden[golden.length - 1]['numberbottom']}`
+            s = `${golden[golden.length - 1]['patti1'][1]}${golden[golden.length - 1]['patti1'][2]}${golden[golden.length - 1]['patti1'][3]}-${golden[golden.length - 1]['patti1'][0]}${golden[golden.length - 1]['patti2'][0]}-${golden[golden.length - 1]['patti2'][1]}${golden[golden.length - 1]['patti2'][2]}${golden[golden.length - 1]['patti2'][3]}`
+            document.getElementById('golden').innerHTML = s
+            document.getElementById('golden1').innerHTML = s
             break;
           case 'stargold':
             stargold.push(...data)
-            document.getElementById('stargoldtop').innerHTML =
-            `${stargold[stargold.length - 1]['numbertop']}`
-        document.getElementById('stargoldmiddle').innerHTML =
-            `-${stargold[stargold.length - 1]['numbermiddle']}-`
-        document.getElementById('stargoldbottom').innerHTML =
-            `${stargold[stargold.length - 1]['numberbottom']}`
-        document.getElementById('stargold').innerHTML =
-            `${stargold[stargold.length - 1]['numbertop']}-${
-              stargold[stargold.length - 1]['numbermiddle']}-${
-                stargold[stargold.length - 1]['numberbottom']}`
+            s = `${stargold[stargold.length - 1]['patti1'][1]}${stargold[stargold.length - 1]['patti1'][2]}${stargold[stargold.length - 1]['patti1'][3]}-${stargold[stargold.length - 1]['patti1'][0]}${stargold[stargold.length - 1]['patti2'][0]}-${stargold[stargold.length - 1]['patti2'][1]}${stargold[stargold.length - 1]['patti2'][2]}${stargold[stargold.length - 1]['patti2'][3]}`
+            document.getElementById('stargold').innerHTML = s
+            document.getElementById('stargold1').innerHTML = s
             break;
           case 'kalyan':
             kalyan.push(...data)
-            document.getElementById('kalyantop').innerHTML =
-            `${kalyan[kalyan.length - 1]['numbertop']}`
-        document.getElementById('kalyanmiddle').innerHTML =
-            `-${kalyan[kalyan.length - 1]['numbermiddle']}-`
-        document.getElementById('kalyanbottom').innerHTML =
-            `${kalyan[kalyan.length - 1]['numberbottom']}`
-        document.getElementById('kalyan').innerHTML =
-            `${kalyan[kalyan.length - 1]['numbertop']}-${
-              kalyan[kalyan.length - 1]['numbermiddle']}-${
-                kalyan[kalyan.length - 1]['numberbottom']}`
+            s = `${kalyan[kalyan.length - 1]['patti1'][1]}${kalyan[kalyan.length - 1]['patti1'][2]}${kalyan[kalyan.length - 1]['patti1'][3]}-${kalyan[kalyan.length - 1]['patti1'][0]}${kalyan[kalyan.length - 1]['patti2'][0]}-${kalyan[kalyan.length - 1]['patti2'][1]}${kalyan[kalyan.length - 1]['patti2'][2]}${kalyan[kalyan.length - 1]['patti2'][3]}`
+            document.getElementById('kalyan').innerHTML = s
+            document.getElementById('kalyan1').innerHTML = s
             break;
           case 'shubhlakshmi':
             shubhlakshmi.push(...data)
-            document.getElementById('shubhlakshmitop').innerHTML =
-            `${shubhlakshmi[shubhlakshmi.length - 1]['numbertop']}`
-        document.getElementById('shubhlakshmimiddle').innerHTML =
-            `-${shubhlakshmi[shubhlakshmi.length - 1]['numbermiddle']}-`
-        document.getElementById('shubhlakshmibottom').innerHTML =
-            `${shubhlakshmi[shubhlakshmi.length - 1]['numberbottom']}`
-        document.getElementById('shubhlakshmi').innerHTML =
-            `${shubhlakshmi[shubhlakshmi.length - 1]['numbertop']}-${
-              shubhlakshmi[shubhlakshmi.length - 1]['numbermiddle']}-${
-                shubhlakshmi[shubhlakshmi.length - 1]['numberbottom']}`
+            s = `${shubhlakshmi[shubhlakshmi.length - 1]['patti1'][1]}${shubhlakshmi[shubhlakshmi.length - 1]['patti1'][2]}${shubhlakshmi[shubhlakshmi.length - 1]['patti1'][3]}-${shubhlakshmi[shubhlakshmi.length - 1]['patti1'][0]}${shubhlakshmi[shubhlakshmi.length - 1]['patti2'][0]}-${shubhlakshmi[shubhlakshmi.length - 1]['patti2'][1]}${shubhlakshmi[shubhlakshmi.length - 1]['patti2'][2]}${shubhlakshmi[shubhlakshmi.length - 1]['patti2'][3]}`
+            document.getElementById('shubhlakshmi').innerHTML = s
+            document.getElementById('shubhlakshmi1').innerHTML = s
             break;
           case 'starnight':
             starnight.push(...data)
-            document.getElementById('starnighttop').innerHTML =
-            `${starnight[starnight.length - 1]['numbertop']}`
-        document.getElementById('starnightmiddle').innerHTML =
-            `-${starnight[starnight.length - 1]['numbermiddle']}-`
-        document.getElementById('starnightbottom').innerHTML =
-            `${starnight[starnight.length - 1]['numberbottom']}`
-        document.getElementById('starnight').innerHTML =
-            `${starnight[starnight.length - 1]['numbertop']}-${
-              starnight[starnight.length - 1]['numbermiddle']}-${
-                starnight[starnight.length - 1]['numberbottom']}`
+            s = `${starnight[starnight.length - 1]['patti1'][1]}${starnight[starnight.length - 1]['patti1'][2]}${starnight[starnight.length - 1]['patti1'][3]}-${starnight[starnight.length - 1]['patti1'][0]}${starnight[starnight.length - 1]['patti2'][0]}-${starnight[starnight.length - 1]['patti2'][1]}${starnight[starnight.length - 1]['patti2'][2]}${starnight[starnight.length - 1]['patti2'][3]}`
+            document.getElementById('starnight').innerHTML = s
+            document.getElementById('starnight1').innerHTML = s
             break;
           case 'mainmatka':
             mainmatka.push(...data)
-            document.getElementById('mainmatkatop').innerHTML =
-            `${mainmatka[mainmatka.length - 1]['numbertop']}`
-        document.getElementById('mainmatkamiddle').innerHTML =
-            `-${mainmatka[mainmatka.length - 1]['numbermiddle']}-`
-        document.getElementById('mainmatkabottom').innerHTML =
-            `${mainmatka[mainmatka.length - 1]['numberbottom']}`
-        document.getElementById('mainmatka').innerHTML =
-            `${mainmatka[mainmatka.length - 1]['numbertop']}-${
-              mainmatka[mainmatka.length - 1]['numbermiddle']}-${
-                mainmatka[mainmatka.length - 1]['numberbottom']}`
+            s = `${mainmatka[mainmatka.length - 1]['patti1'][1]}${mainmatka[mainmatka.length - 1]['patti1'][2]}${mainmatka[mainmatka.length - 1]['patti1'][3]}-${mainmatka[mainmatka.length - 1]['patti1'][0]}${mainmatka[mainmatka.length - 1]['patti2'][0]}-${mainmatka[mainmatka.length - 1]['patti2'][1]}${mainmatka[mainmatka.length - 1]['patti2'][2]}${mainmatka[mainmatka.length - 1]['patti2'][3]}`
+            document.getElementById('mainmatka').innerHTML = s
+            document.getElementById('mainmatka1').innerHTML = s
+            break;
+          default:
+            break;
+        }
+      })
+      .catch(error => {
+        console.error('fetch error:', error);
+      });
+}
+
+const getRecordln =
+    async (str) => {
+      console.log("here");
+  await fetch('https://starmatkaagain.onrender.com/getln', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({'title': str})
+  })
+      .then(response => {
+        console.log("again");
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then(data => {
+        let s
+        switch (str) {
+          case 'starmorning':
+            starmorningln = data[data.length - 1]
+            s = ''
+            starmorningln['ln'].forEach(n => {
+              s += `${n} `
+            });
+            document.getElementById('starmorningln').innerHTML = s
+            break;
+          case 'chitpiti':
+            chitpitiln = data[data.length - 1]
+            s = ''
+            chitpitiln['ln'].forEach(n => {
+              s += `${n} `
+            });
+            document.getElementById('chitpitiln').innerHTML = s
+            break;
+          case 'golden':
+            goldenln = data[data.length - 1]
+            s = ''
+            goldenln['ln'].forEach(n => {
+              s += `${n} `
+            });
+            document.getElementById('goldenln').innerHTML = s
+            break;
+          case 'stargold':
+            stargoldln = data[data.length - 1]
+            s = ''
+            stargoldln['ln'].forEach(n => {
+              s += `${n} `
+            });
+            document.getElementById('stargoldln').innerHTML = s
+            break;
+          case 'kalyan':
+            kalyanln = data[data.length - 1]
+            s = ''
+            kalyanln['ln'].forEach(n => {
+              s += `${n} `
+            });
+            document.getElementById('kalyanln').innerHTML = s
+            break;
+          case 'shubhlakshmi':
+            shubhlakshmiln = data[data.length - 1]
+            s = ''
+            shubhlakshmiln['ln'].forEach(n => {
+              s += `${n} `
+            });
+            document.getElementById('shubhlakshmiln').innerHTML = s
+            break;
+          case 'starnight':
+            starnightln = data[data.length - 1]
+            s = ''
+            starnightln['ln'].forEach(n => {
+              s += `${n} `
+            });
+            document.getElementById('starnightln').innerHTML = s
+            break;
+          case 'mainmatka':
+            mainmatkaln = data[data.length - 1]
+            s = ''
+            mainmatkaln['ln'].forEach(n => {
+              s += `${n} `
+            });
+            document.getElementById('mainmatkaln').innerHTML = s
             break;
           default:
             break;
@@ -147,7 +199,8 @@ const getRecord =
                    //   }
 
                    namelist.forEach(async name => {
-                    await getRecord(name)});
+                    await getRecord(name)
+                    await getRecordln(name)});
 
 
 async function openchart(str) {

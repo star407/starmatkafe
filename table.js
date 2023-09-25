@@ -29,7 +29,6 @@ const getRecord =
 getRecord(localStorage.getItem("matkaname")).then(
 data => {
   console.log(rec[0])
-  console.log(rec[0]['updatedAt'])
   var i = 0;
   var count = 0;
   var arr = []
@@ -42,23 +41,43 @@ data => {
   }
   if(count == 0){
     if((rec.length - i) < 7){
-      var date1 = new Date(rec[i]['updatedAt'])
-      var date2 = new Date(rec[rec.length - 1]['updatedAt'])
-      arr.push(...[`${date1.toDateString()} - ${date2.toDateString()}`])
+      arr.push(...[`${rec[i]['entrydate']}<br>to<br>${rec[rec.length - 1]['entrydate']}`])
     } else {
-      var date1 = new Date(rec[i]['updatedAt'])
-      var date2 = new Date(rec[i + 6]['updatedAt'])
-      arr.push(...[`${date1.toDateString()} - ${date2.toDateString()}`])
+      arr.push(...[`${rec[i]['entrydate']}<br>to<br>${rec[i + 6]['entrydate']}`])
     }
   }
   if(i == (rec.length - 1)){
     //
-    arr.push(...[`${rec[i]['numbertop']} - ${rec[i]['numbermiddle']} - ${rec[i]['numberbottom']}`])
+    var date = new Date(rec[i]['entrydate'])
+    console.log(`${date.getDay()}  ${count}`);
+    console.log(rec[i]);
+    if(date.getDay() == count){
+      arr.push(...[rec[i]])
+    } else {
+      arr.push(...[{
+        "patti1": ["","","",""],
+        "patti2": ["","","",""]
+      }])
+      count++;
+      continue;
+    }
+ 
     console.log(arr)
     updatetr(arr)
     break;
   } else {
-    arr.push(...[`${rec[i]['numbertop']} - ${rec[i]['numbermiddle']} - ${rec[i]['numberbottom']}`])
+    var date = new Date(rec[i]['entrydate'])
+    console.log(`w ${date.getDay()}  ${count}`);
+    if(date.getDay() == count){
+      arr.push(...[rec[i]])
+    } else {
+      arr.push(...[{
+        "patti1": ["","","",""],
+        "patti2": ["","","",""]
+      }])
+      count++;
+      continue;
+    }
   }
   i++
   count++
@@ -67,16 +86,15 @@ data => {
 )
 
 const updatetr = (arr)=> {
-
-  document.getElementById('chart').innerHTML += `<tr><td><p>${arr[0]}</p></td>
-  <td class="jd"><span class="d">${arr[1]}</span></td>
-    <td class="jd"><span class="d" style="color:#ff0000">${arr[2]}</span></td>
-    <td class="jd"><span class="d">${arr[3]}</span></td>
-    <td class="jd"><span class="d">${arr[4]}</span></td>
-    <td class="jd"><span class="d" style="color:#ff0000">${arr[5]}</span></td>
-<td class="jd"><span class="d">${arr[6]}</span></td>
-<td class="jd"><span class="d">${arr[7]}</span></td>`
+let ss = `<tr><td><p>${arr[0]}</p></td>`
+for (let i = 1; i < arr.length; i++) {
+ ss += `								<td class="pt" style="font-weight:900;font-size:28px">${arr[i]["patti1"][1]}<br>${arr[i]["patti1"][2]}<br>${arr[i]["patti1"][3]}</td>
+ <td class="jd"><span class="d">${arr[i]["patti1"][0]}${arr[i]["patti2"][0]}</span></td>
+ <td class="pt" style="font-weight:900;font-size:28px">${arr[i]["patti2"][1]}<br>${arr[i]["patti2"][2]}<br>${arr[i]["patti2"][3]}</td>`
+  
 }
+ss += `</tr>`
 
-
+  document.getElementById('chart').innerHTML += ss
+}
 
