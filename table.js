@@ -86,11 +86,11 @@ data => {
 )
 
 const updatetr = (arr)=> {
-let ss = `<tr><td><p>${arr[0]||'x'}</p></td>`
+let ss = `<tr><td><p>${arr[0] === 0 ?0:arr[0]||'x'}</p></td>`
 for (let i = 1; i < arr.length; i++) {
- ss += `								<td class="pt" style="font-weight:900;font-size:28px">${arr[i]["patti1"][1]||'x'}<br>${arr[i]["patti1"][2]||'x'}<br>${arr[i]["patti1"][3]||'x'}</td>
- <td class="jd"><span class="d">${arr[i]["patti1"][0]||'x'}${arr[i]["patti2"][0]||'x'}</span></td>
- <td class="pt" style="font-weight:900;font-size:28px">${arr[i]["patti2"][1]||'x'}<br>${arr[i]["patti2"][2]||'x'}<br>${arr[i]["patti2"][3]||'x'}</td>`
+ ss += `								<td class="pt" style="font-weight:900;font-size:28px">${arr[i]["patti1"][1] === 0 ? 0 : arr[i]["patti1"][1]||'x'}<br>${arr[i]["patti1"][2] === 0 ? 0 : arr[i]["patti1"][2]||'x'}<br>${arr[i]["patti1"][3] === 0 ? 0 : arr[i]["patti1"][3]||'x'}</td>
+ <td class="jd"><span class="d">${arr[i]["patti1"][0] === 0 ? 0 : arr[i]["patti1"][0]||'x'}${arr[i]["patti2"][0] === 0 ? 0 : arr[i]["patti2"][0]||'x'}</span></td>
+ <td class="pt" style="font-weight:900;font-size:28px">${arr[i]["patti2"][1] === 0 ? 0 : arr[i]["patti2"][1]||'x'}<br>${arr[i]["patti2"][2] === 0 ? 0 : arr[i]["patti2"][2]||'x'}<br>${arr[i]["patti2"][3] === 0 ? 0 : arr[i]["patti2"][3]||'x'}</td>`
   
 }
 ss += `</tr>`
