@@ -41,9 +41,9 @@ data => {
   }
   if(count == 0){
     if((rec.length - i) < 7){
-      arr.push(...[`${rec[i]['entrydate']}<br>to<br>${rec[rec.length - 1]['entrydate']}`])
+      arr.push(...[`${rec[i]['entrydate']||'x'}<br>to<br>${rec[rec.length - 1]['entrydate']||'x'}`])
     } else {
-      arr.push(...[`${rec[i]['entrydate']}<br>to<br>${rec[i + 6]['entrydate']}`])
+      arr.push(...[`${rec[i]['entrydate']||'x'}<br>to<br>${rec[i + 6]['entrydate']||'x'}`])
     }
   }
   if(i == (rec.length - 1)){
@@ -86,11 +86,11 @@ data => {
 )
 
 const updatetr = (arr)=> {
-let ss = `<tr><td><p>${arr[0]}</p></td>`
+let ss = `<tr><td><p>${arr[0]||'x'}</p></td>`
 for (let i = 1; i < arr.length; i++) {
- ss += `								<td class="pt" style="font-weight:900;font-size:28px">${arr[i]["patti1"][1]}<br>${arr[i]["patti1"][2]}<br>${arr[i]["patti1"][3]}</td>
- <td class="jd"><span class="d">${arr[i]["patti1"][0]}${arr[i]["patti2"][0]}</span></td>
- <td class="pt" style="font-weight:900;font-size:28px">${arr[i]["patti2"][1]}<br>${arr[i]["patti2"][2]}<br>${arr[i]["patti2"][3]}</td>`
+ ss += `								<td class="pt" style="font-weight:900;font-size:28px">${arr[i]["patti1"][1]||'x'}<br>${arr[i]["patti1"][2]||'x'}<br>${arr[i]["patti1"][3]||'x'}</td>
+ <td class="jd"><span class="d">${arr[i]["patti1"][0]||'x'}${arr[i]["patti2"][0]||'x'}</span></td>
+ <td class="pt" style="font-weight:900;font-size:28px">${arr[i]["patti2"][1]||'x'}<br>${arr[i]["patti2"][2]||'x'}<br>${arr[i]["patti2"][3]||'x'}</td>`
   
 }
 ss += `</tr>`
