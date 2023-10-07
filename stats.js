@@ -39,11 +39,22 @@ const getRecord =
         return response.json();
       })
       .then(data => {
+        const date = new Date();
+
+        let day = date.getDate();
+        let month = date.getMonth() + 1;
+        let year = date.getFullYear();
+      
+        // This arrangement can be altered based on how we want the date's format to
+        // appear.
+        let currentDate = `${year}-${month}-${day}`;
+        console.log(currentDate)
+        currentDate = '1965-10-8'
         let s
         switch (str) {
           case 'starmorning':
             starmorning.push(...data) 
-            s = `${starmorning[starmorning.length - 1]['patti1'][1] === 0 ? 0 : starmorning[starmorning.length - 1]['patti1'][1]||"x"}${starmorning[starmorning.length - 1]['patti1'][2] ===0 ?0:starmorning[starmorning.length - 1]['patti1'][2]||"x"}${starmorning[starmorning.length - 1]['patti1'][3] === 0?0:starmorning[starmorning.length - 1]['patti1'][3]||"x"}-${starmorning[starmorning.length - 1]['patti1'][0] ===0?0:starmorning[starmorning.length - 1]['patti1'][0]||"x"}${starmorning[starmorning.length - 1]['patti2'][0] === 0?0:starmorning[starmorning.length - 1]['patti2'][0]||"x"}-${starmorning[starmorning.length - 1]['patti2'][1] ===0?0:starmorning[starmorning.length - 1]['patti2'][1]||"x"}${starmorning[starmorning.length - 1]['patti2'][2]===0?0:starmorning[starmorning.length - 1]['patti2'][2]||"x"}${starmorning[starmorning.length - 1]['patti2'][3]===0?0:starmorning[starmorning.length - 1]['patti2'][3]||"x"}`
+            s = starmorning[starmorning.length - 1]['entrydate'] !== currentDate ?'xxx-xx-xxx':`${starmorning[starmorning.length - 1]['patti1'][1] === 0 ? 0 : starmorning[starmorning.length - 1]['patti1'][1]||"x"}${starmorning[starmorning.length - 1]['patti1'][2] ===0 ?0:starmorning[starmorning.length - 1]['patti1'][2]||"x"}${starmorning[starmorning.length - 1]['patti1'][3] === 0?0:starmorning[starmorning.length - 1]['patti1'][3]||"x"}-${starmorning[starmorning.length - 1]['patti1'][0] ===0?0:starmorning[starmorning.length - 1]['patti1'][0]||"x"}${starmorning[starmorning.length - 1]['patti2'][0] === 0?0:starmorning[starmorning.length - 1]['patti2'][0]||"x"}-${starmorning[starmorning.length - 1]['patti2'][1] ===0?0:starmorning[starmorning.length - 1]['patti2'][1]||"x"}${starmorning[starmorning.length - 1]['patti2'][2]===0?0:starmorning[starmorning.length - 1]['patti2'][2]||"x"}${starmorning[starmorning.length - 1]['patti2'][3]===0?0:starmorning[starmorning.length - 1]['patti2'][3]||"x"}`
             console.log(`sm${s}`);
             document.getElementById('starmorning').innerHTML = s
             document.getElementById('starmorning1').innerHTML = s
