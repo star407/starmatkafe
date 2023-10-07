@@ -42,8 +42,8 @@ const getRecord =
         let s
         switch (str) {
           case 'starmorning':
-            starmorning.push(...data)
-            s = `${starmorning[starmorning.length - 1]['patti1'][1]||"x"}${starmorning[starmorning.length - 1]['patti1'][2]||"x"}${starmorning[starmorning.length - 1]['patti1'][3]||"x"}-${starmorning[starmorning.length - 1]['patti1'][0]||"x"}${starmorning[starmorning.length - 1]['patti2'][0]||"x"}-${starmorning[starmorning.length - 1]['patti2'][1]||"x"}${starmorning[starmorning.length - 1]['patti2'][2]||"x"}${starmorning[starmorning.length - 1]['patti2'][3]||"x"}`
+            starmorning.push(...data) 
+            s = `${starmorning[starmorning.length - 1]['patti1'][1] === 0 ? 0 : starmorning[starmorning.length - 1]['patti1'][1]||"x"}${starmorning[starmorning.length - 1]['patti1'][2]||"x"}${starmorning[starmorning.length - 1]['patti1'][3]||"x"}-${starmorning[starmorning.length - 1]['patti1'][0]||"x"}${starmorning[starmorning.length - 1]['patti2'][0]||"x"}-${starmorning[starmorning.length - 1]['patti2'][1]||"x"}${starmorning[starmorning.length - 1]['patti2'][2]||"x"}${starmorning[starmorning.length - 1]['patti2'][3]||"x"}`
             console.log(`sm${s}`);
             document.getElementById('starmorning').innerHTML = s
             document.getElementById('starmorning1').innerHTML = s
