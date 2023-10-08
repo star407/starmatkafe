@@ -86,8 +86,9 @@ data => {
 )
 
 const updatetr = (arr)=> {
+  let ss
   if(localStorage.getItem("matkaname") === "kalyan"){
-    ss += `<tr><td><p>24-06-2013<br>to<br>29-06-2013</p></td>
+     ss = `<tr><td><p>24-06-2013<br>to<br>29-06-2013</p></td>
     <td style="font-weight:900;font-size:28px">x<br>x<br>x</td>
     <td><span class="d">xx</span></td>
     <td style="font-weight:900;font-size:28px">x<br>x<br>x</td>
@@ -8718,9 +8719,15 @@ const updatetr = (arr)=> {
       <td class="jd"><span class="d">32</span></td>
       <td class="pt" style="font-weight:900;font-size:28px">1<br>4<br>7</td><td class="pt" style="font-weight:900;font-size:28px">1<br>6<br>0</td>
   <td class="jd"><span class="d">74</span></td>
-  <td class="pt" style="font-weight:900;font-size:28px">3<br>4<br>7</td></tr>`
+  <td class="pt" style="font-weight:900;font-size:28px">3<br>4<br>7</td>`
+  } else {
+    ss = ''
   }
-let ss = `<tr><td><p>${arr[0] === 0 ?0:arr[0]||'x'}</p></td>`
+if(localStorage.getItem("matkaname") === "kalyan"){
+  ss += `<td><p>${arr[0] === 0 ?0:arr[0]||'x'}</p></td>`
+} else {
+  ss += `<tr><td><p>${arr[0] === 0 ?0:arr[0]||'x'}</p></td>`
+}
 for (let i = 1; i < arr.length; i++) {
  ss += `								<td class="pt" style="font-weight:900;font-size:28px">${arr[i]["patti1"][1] === 0 ? 0 : arr[i]["patti1"][1]||'x'}<br>${arr[i]["patti1"][2] === 0 ? 0 : arr[i]["patti1"][2]||'x'}<br>${arr[i]["patti1"][3] === 0 ? 0 : arr[i]["patti1"][3]||'x'}</td>
  <td class="jd"><span class="d">${arr[i]["patti1"][0] === 0 ? 0 : arr[i]["patti1"][0]||'x'}${arr[i]["patti2"][0] === 0 ? 0 : arr[i]["patti2"][0]||'x'}</span></td>
