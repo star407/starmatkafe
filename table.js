@@ -34,7 +34,6 @@ data => {
   var count = 0;
   var arr = []
   console.log(localStorage.getItem("matkaname"));
-  if(localStorage.getItem("matkaname") === "kalyan" || localStorage.getItem("matkaname") === "golden"){
     ss += `<tr><td><p>24-06-2013<br>to<br>29-06-2013</p></td>
     <td style="font-weight:900;font-size:28px">x<br>x<br>x</td>
     <td><span class="d">xx</span></td>
@@ -8667,7 +8666,6 @@ data => {
       <td class="pt" style="font-weight:900;font-size:28px">1<br>4<br>7</td><td class="pt" style="font-weight:900;font-size:28px">1<br>6<br>0</td>
   <td class="jd"><span class="d">74</span></td>
   <td class="pt" style="font-weight:900;font-size:28px">3<br>4<br>7</td></tr>`
-  }
  while (count <= 7) {
   if(count == 7){
     console.log(arr)
