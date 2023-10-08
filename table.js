@@ -34,7 +34,7 @@ data => {
   var count = 0;
   var arr = []
   console.log(localStorage.getItem("matkaname"));
-  if(localStorage.getItem("matkaname") === "kalyan"){
+  if(localStorage.getItem("matkaname") === "kalyan" || localStorage.getItem("matkaname") === "golden"){
     ss += `<tr><td><p>24-06-2013<br>to<br>29-06-2013</p></td>
     <td style="font-weight:900;font-size:28px">x<br>x<br>x</td>
     <td><span class="d">xx</span></td>
