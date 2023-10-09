@@ -210,6 +210,7 @@ const getRecordln =
                     await getRecordln(name)});
 
 
+
 async function openchart(str) {
   // // Get the value entered by the user
   // var input = document.getElementById('value-input');
